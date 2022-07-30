@@ -14,6 +14,7 @@ Use ex below to add image to Readme
 ## Credits
 
 Brian Design on YouTube: https://www.youtube.com/watch?v=f4fB9Xg2JEY&ab_channel=BrianDesign 
+JS Arrow Function (W3 Schools): https://www.w3schools.com/js/js_arrow_function.asp
 
 
 ## Features

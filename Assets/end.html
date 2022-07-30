@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <!-- Boot Strap API -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="end" class="text-center mt-4">
+            <h1 id="finalScore">0</h1>
+            <br>
+            <form>
+                <div class="form-group justify-content-center">
+                    <label for="formGroupExampleInput">Enter Initials: </label>
+                    <input type="text" id="username" placeholder="Intials Here">
+                    <button class="btn btn-light" id="saveScoreBtn" type="sumbit" onclick="saveHighScore(event)" disabled>Save Score</button>
+                </div>
+                <a href="./game.html" class="btn btn-light">Play Again</a>
+                <a href="./index.html" class="btn btn-dark">Home Page</a>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="./JS/end.js"></script>
+</body>
+
+</html>
