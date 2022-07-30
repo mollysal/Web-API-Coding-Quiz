@@ -8,7 +8,7 @@
   <!-- Boot Strap API -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
 <body>
@@ -18,24 +18,40 @@
       <div class="timer-Count">75</div>
     </div>
   </section>
-
-  <section>
-    <div class="container-sm">
+<!--
+  <div class="container-sm">
+    <h1 style="text-align:center;">Coding Quiz Challenge</h1>
+    <p class="text-center">
+      Try & answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+      will penalize your scoretime by 10 seconds.
+    </p>
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-info" id="Start">start quiz</button>
+    </div>
+  </div>
+-->
+  <div class="container">
+    <div id="home" class="flex-column flex-center">
       <h1 style="text-align:center;">Coding Quiz Challenge</h1>
       <p class="text-center">
         Try & answer the following code-related questions within the time limit. Keep in mind that incorrect answers
         will penalize your scoretime by 10 seconds.
       </p>
       <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-info">start quiz</button>
+        <a href="game.html" class="btn btn-info" id="start">Start Quiz</a>
       </div>
+
     </div>
-  </section>
+  </div>
+
 
   <section>
     <div class="d-flex flex-column align-items-end">
       <div class="high score">
-        <h6>High Score: <span class="socre">0</span></h6>
+        <!-- Select One of the buttons after finishing JS -->
+        <button type="button" class="btn btn-link" id="highScore">High Scores</button>
+        <h6>High Scores <a href="/highscores.html" class="btn"></a></h6>
+
       </div>
     </div>
   </section>
