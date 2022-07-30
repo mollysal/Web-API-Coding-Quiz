@@ -7,6 +7,7 @@ var question =  */
 var question = document.querySelector('#question')
 var choices = Array.from(document.querySelectorAll('.choice-text'))
 var scoreText = document.querySelector('#score')
+var progressText = document.querySelector('#progressText')
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -60,7 +61,7 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
-    if(availableQuestions.length ===0 || questionCounter > MAX_QUESTIONS) {
+    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
         return window.location.assign('/end.html')
@@ -85,15 +86,34 @@ getNewQuestion = () => {
 
 }
 
-choices.forEach(choices => {
-    choices.addEventListner('click', e => {
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
         if(!acceptingAnswers) return
         
         acceptingAnswers = false
         const selectedChoice = e.target
+        /* number is to the choices number of HTML */
         const selectedAnswer = selectedChoice.dataset['number']
 
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+        if(classToApply === 'correct') {
+            incrimentScore(SCORE_POINTS)
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply)
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply)
+            getNewQuestion()
+        }, 1000)
     
     })
 })
 
+incrementScore = num => {
+    score +=num
+    scoreText.innerText = score
+}
+
+startGame()

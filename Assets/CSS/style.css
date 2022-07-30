@@ -38,7 +38,11 @@ body{
 }
 
 .correct {
-    background: green;
+    background: rgb(159, 202, 159);
+}
+
+.incorrect {
+    background: rgb(213, 124, 124);
 }
 
 @media screen and (max-width: 768px) {
