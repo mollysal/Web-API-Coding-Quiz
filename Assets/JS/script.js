@@ -1,7 +1,9 @@
+//Establishing Variables from HTML (game.html)
 var question = document.querySelector('#question')
 var choices = Array.from(document.querySelectorAll('.choice-text'))
 var scoreText = document.querySelector('#score')
 var progressText = document.querySelector('#progressText')
+var timer = document.querySelector("#timer")
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -9,6 +11,7 @@ let score = 0
 let questionCounter = 0
 let availableQuestions = []
 
+//Questions & Answer Array will show up in question & choice-text in HTML
 let questions = [
     {
         question: 'Commonly used data types DO NOT include: ',
@@ -44,9 +47,11 @@ let questions = [
     }
 ]
 
+//Establishing a Score & Max amaount of question
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 4 
 
+//Establishing what is happening at the start of the game
 startGame = () => {
     questionCounter = 0
     score = 0
@@ -54,6 +59,7 @@ startGame = () => {
     getNewQuestion()
 }
 
+//get new question function 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
