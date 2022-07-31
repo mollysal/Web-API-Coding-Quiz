@@ -1,9 +1,3 @@
-/* var timer = document.querySelector('#timer');
-var answerslist = document.body.querySelector('ul');
-var startQuiz = document.body.querySelector('start');
-
-var question =  */
-
 var question = document.querySelector('#question')
 var choices = Array.from(document.querySelectorAll('.choice-text'))
 var scoreText = document.querySelector('#score')
@@ -64,7 +58,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
-        return window.location.assign('./end.html')
+        return window.location.assign('/Users/mollysalmonsen/Documents/_Coding-Bootcamp/Homework/Web-API-Coding-Quiz/Assets/end.html')
     }
 
     questionCounter++
@@ -80,7 +74,7 @@ getNewQuestion = () => {
         choice.innerText = currentQuestion['choice' + number]
     })
 
-    availableQuestions.slice(questionIndex, 1)
+    availableQuestions.splice(questionIndex, 1)
 
     acceptingAnswers = true
 

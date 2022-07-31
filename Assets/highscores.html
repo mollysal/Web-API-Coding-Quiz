@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +11,25 @@
 
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
+
 <body>
-    
-     <!-- JavaScript -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="./JS/highscores.js"></script>
+    <div class="container">
+        <div id="highScores" class="flex-column flex-center">
+            <h1 id="finalScore" style="text-align:center">Leaderboard</h1>
+
+            <ul class="text-align:center" id="highScoresList"></ul>
+
+            <div class="d-flex justify-content-center">
+                <a href="index.html" class="btn btn-primary">Go Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="./JS/highscores.js"></script>
 </body>
+
 </html>
