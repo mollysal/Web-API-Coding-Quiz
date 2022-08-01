@@ -5,45 +5,32 @@ Mod-4-HW
 Deployment URL: <Insert GitHub Pages Link>
 
 ## Description
-
+Test coding knowledge. This quiz prompts users with a coding question & they have to select the right answer. 
+There is a time limit & for each incorrect answer the time limit decreases by 10 seconds for each incorrect answer selected. 
+Correct answers will award the user 100 points. Once all questions have been answered or the time runs out the game ends. 
+At the end of the game the user sees the high score & they can insert their initials. After they save their initials they can see the leader board. 
 
 ## Usage
-Use ex below to add image to Readme
-
+Starting Webpage of the quiz:
 ![Website Image](/Assets/Images/Starting_Quiz.png)
 
-![Website Image](/Assets/Images/Questions.png)
 
+Question Example:
+![Website Image](/Assets/Images/Question.png)
 
+High Score page:
 ![Website Image](/Assets/Images/HighScore.png)
 
-
+Leader page:
 ![Website Image](/Assets/Images/Leaderboard.png)
 
 ## Credits
-
+U of M Coding Bootcamp Instructors & TAs
 Brian Design on YouTube: https://www.youtube.com/watch?v=f4fB9Xg2JEY&ab_channel=BrianDesign 
 JS Arrow Function (W3 Schools): https://www.w3schools.com/js/js_arrow_function.asp
 
-
 ## Features
-Timer, timer subtraction for incorrect submissions, high score tracking
+Timer, timer subtraction for incorrect submissions, high score tracking, correct selection increase score & turns green, leaderboard
 
-## User Story
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
 
-## Acceptance Criteria
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
  
