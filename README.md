@@ -9,7 +9,16 @@ Deployment URL: <Insert GitHub Pages Link>
 
 ## Usage
 Use ex below to add image to Readme
-![Website Image](/Assets/Password-Generator.png)
+
+![Website Image](/Assets/Images/Starting_Quiz.png)
+
+![Website Image](/Assets/Images/Questions.png)
+
+
+![Website Image](/Assets/Images/HighScore.png)
+
+
+![Website Image](/Assets/Images/Leaderboard.png)
 
 ## Credits
 

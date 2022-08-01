@@ -11,9 +11,11 @@ let acceptingAnswers = true
 let score = 0
 let questionCounter = 0
 let availableQuestions = []
+//Easily adjust the quiz timer
 let timeLeft = 76
 
 //Questions & Answer Array will show up in question & choice-text in HTML
+//Correct answer is defined by the interger that aligns with the choice
 let questions = [
     {
         question: 'Commonly used data types DO NOT include: ',
@@ -52,26 +54,28 @@ let questions = [
 //Establishing a Score & Max amaount of question
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 4 
-//Max amount of time lost per incorrect question
-const TIME_DECREASE = 10
+
 
 //Establishing what is happening at the start of the game
-startGame = () => {
+//at the start of the game, question counter is set to 0, score is set to 0, at the start of the game the only available questions are from the question array, it must run get new question 
+function startGame () {
     questionCounter = 0
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
+    //Once the quiz is strarted, the timer starts counting down
+    runTimer()
 }
 
-//get new question function 
-getNewQuestion = () => {
+//get new question function
+//at the start of the game it will randomly select a question & it will run until all questions are accounted for. 
+function getNewQuestion() {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
         return window.location.assign('/Users/mollysalmonsen/Documents/_Coding-Bootcamp/Homework/Web-API-Coding-Quiz/Assets/end.html')
     }
-    //Once the quiz is strarted, the timer starts counting down
-    runTimer()
+    
 
     //The question counter lets users know how many questions they have left out of the max number of questions, in this example 4
     questionCounter++
@@ -80,24 +84,26 @@ getNewQuestion = () => {
     //Picking a random question from the availableQuestions array
     const questionIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionIndex]
-
-    // Knowing what question to ask 
+    //knowing what question text to use - knowing what question to show
     question.innerText = currentQuestion.question
 
     //Each correct answer is associated with a number from the avaliableQustions array
-    choices.forEach(choice => {
+    choices.forEach(function(choice) {
+        //Knows what question user selects
         const number = choice.dataset['number']
         choice.innerText = currentQuestion['choice' + number]
     })
 
+    //Inserting the question index into the array  
     availableQuestions.splice(questionIndex, 1)
 
     acceptingAnswers = true
 
 }
 
-choices.forEach(choice => {
-    choice.addEventListener('click', e => {
+//for every choice/available answer wait for a click event (choice being the parameter)
+choices.forEach(function(choice) {
+    choice.addEventListener('click', function(e) {
         if(!acceptingAnswers) return
         
         acceptingAnswers = false
@@ -115,12 +121,15 @@ choices.forEach(choice => {
 
         if(classToApply === 'incorrect') {
             //if the choice is wrong, the timer decreases by 10 seconds
-            runTimer(TIME_DECREASE)
+            timeLeft = timeLeft - 10
         }
 
+        //Adding the correct or incorrect coloring to the selected choice
         selectedChoice.parentElement.classList.add(classToApply)
 
-        setTimeout(() => {
+
+        //The function needs time to show us the correct or incorrect coloring before moving to the next function
+        setTimeout(function() {
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
         }, 1000)
@@ -128,22 +137,24 @@ choices.forEach(choice => {
     })
 })
 
+//Timer function - for every wrong answer it decreases by 10
 function runTimer () {
     let clock = setInterval(function() {
         timeLeft--;
-        timer.textContent = `Time: ${timeLeft}`;
+        timer.innerHTML = `Time: ${timeLeft}`;
         if(timeLeft === 0) {
             //when the timer runs out it redirects you to the end.html where you can insert your initials for hight score
             clearInterval(clock);
             document.location.href = "./end.html"
         }
-    }, 1000)
+    }, 1000) //1 second intervals
 }
 
-
-incrementScore = num => {
+//increment the score by adding on to the number
+function incrementScore(num) {
     score +=num
     scoreText.innerText = score
 }
 
+//run the start game funciton 
 startGame()

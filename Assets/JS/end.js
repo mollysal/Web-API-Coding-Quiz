@@ -5,15 +5,18 @@ const mostRecentScore = localStorage.getItem('mostRecentScore')
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
+//only the 5 highest scores
 const MAX_HIGH_SCORES = 5
 
 finalScore.innerText = mostRecentScore
 
-username.addEventListener('keyup', () => {
+//once a intials are typed, the save score button is enabled
+username.addEventListener('keyup', function() {
     saveScoreBtn.disabled = !username.value
 })
 
-saveHighScore = e => {
+function saveHighScore (e) {
+    //do not immediatly refresh the page
     e.preventDefault()
 
     const score = {
@@ -23,7 +26,7 @@ saveHighScore = e => {
     
     highScores.push(score)
 
-    highScores.sort((a,b) => {
+    highScores.sort(function(a,b) {
         return b.score - a.score
     })
 
