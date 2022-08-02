@@ -2,7 +2,7 @@
 Mod-4-HW
 # <Coding Quiz>
 
-Deployment URL: <Insert GitHub Pages Link>
+Deployment URL: https://mollysal.github.io/Web-API-Coding-Quiz/ 
 
 ## Description
 Test coding knowledge. This quiz prompts users with a coding question & they have to select the right answer. 
@@ -26,7 +26,9 @@ Leader page:
 
 ## Credits
 U of M Coding Bootcamp Instructors & TAs
+
 Brian Design on YouTube: https://www.youtube.com/watch?v=f4fB9Xg2JEY&ab_channel=BrianDesign 
+
 JS Arrow Function (W3 Schools): https://www.w3schools.com/js/js_arrow_function.asp
 
 ## Features
